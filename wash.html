@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitWash</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 420px;
+            border-radius: 18px;
+            padding: 30px 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .logo {
+            width: 110px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            font-size: 15px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .price-box {
+            background: #f3f4f6;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        .price-box h2 {
+            color: #111827;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .price-box p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #374151;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #111827;
+        }
+
+        button {
+            width: 100%;
+            background: #111827;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #000000;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #9ca3af;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Logo -->
+        <img src="images/Bit Consolidated Black.png" alt="Bit Consolidated Logo" class="logo">
+
+        <h1>BitWash</h1>
+
+        <p class="subtitle">
+            Fast and simple hostel laundry payments.
+            Pay securely and receive a Telegram notification when your wash is complete.
+        </p>
+
+        <div class="price-box">
+            <h2>MWK 3,500</h2>
+            <p>Machine 1 • Single Wash/Rinse</p>
+        </div>
+
+        <form action="https://washerbackend.onrender.com/pay" method="GET">
+
+            <label>Phone Number</label>
+            <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="0991234567"
+                required
+            >
+
+            <button type="submit">Proceed to Pay Now</button>
+
+        </form>
+
+        <div class="footer">
+            Powered by <a href="https://www.bitconsolidated.africa/" target="_blank">Bit Consolidated</a><br>
+            Secure payments via PayChangu
+        </div>
+
+    </div>
+
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+
+    let phone = document.getElementById("phone").value.trim();
+
+    // Remove spaces
+    phone = phone.replace(/\s+/g, "");
+
+    // Convert +265...
+    if (phone.startsWith("+265")) {
+        phone = phone.substring(1);
+    }
+
+    // Convert 099...
+    if (phone.startsWith("0")) {
+        phone = "265" + phone.substring(1);
+    }
+
+    // Validate Malawi mobile numbers
+    const regex = /^265(99|88|98|87)\d{7}$/;
+
+    if (!regex.test(phone)) {
+        alert("Enter a valid Malawi phone number");
+        e.preventDefault();
+        return;
+    }
+
+    // Save cleaned number back into form
+    document.getElementById("phone").value = phone;
+
+});
+</script>
+
+</body>
+</html>
