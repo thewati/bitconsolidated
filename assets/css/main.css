@@ -3813,3 +3813,47 @@ input, select, textarea {
 		gap: 2em;
 		justify-content: center;
 		}
+
+	/* 
+   BitWash Product Section
+   */
+
+	.gallery{
+		display:flex;
+		gap:20px;
+		justify-content:center;
+		flex-wrap:wrap;
+		margin-top:40px;
+	}
+
+	.gallery img{
+		width:300px;
+		border-radius:10px;
+		box-shadow:0 10px 25px rgba(0,0,0,.2);
+		transition:.3s;
+	}
+
+	.gallery img:hover{
+		transform:translateY(-6px);
+	}
+
+	#products ul{
+		margin-top:20px;
+		margin-left:20px;
+	}
+
+	#products li{
+		margin-bottom:10px;
+	}
+
+	@media screen and (max-width:980px){
+
+		.gallery img{
+			width:100%;
+			max-width:420px;
+		}
+
+	}
+
+
+	
