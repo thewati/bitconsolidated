@@ -3969,14 +3969,16 @@ input, select, textarea {
 	}
 
 	.hero-image {
-    display: block;
     width: 100%;
-    max-width: 900px;      /* Adjust to taste: 700-900px works well */
-    height: auto;
-    margin: 2em auto;
-    border-radius: 12px;
-    box-shadow: 0 12px 30px rgba(0,0,0,.15);
-}
+    max-width: 850px;
+    height: 450px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+    margin: 2.5em auto;
+    display: block;
+	}
 
 
 	
