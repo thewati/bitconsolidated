@@ -3968,5 +3968,15 @@ input, select, textarea {
 
 	}
 
+	.hero-image {
+    display: block;
+    width: 100%;
+    max-width: 900px;      /* Adjust to taste: 700-900px works well */
+    height: auto;
+    margin: 2em auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
 
 	
