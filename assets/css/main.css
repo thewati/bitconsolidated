@@ -3814,43 +3814,156 @@ input, select, textarea {
 		justify-content: center;
 		}
 
+
 	/* 
-   BitWash Product Section
-   */
+   BitWash Feature Cards
+	 */
 
-	.gallery{
-		display:flex;
-		gap:20px;
-		justify-content:center;
-		flex-wrap:wrap;
-		margin-top:40px;
+	.feature-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2em;
+		margin: 3em 0;
 	}
 
-	.gallery img{
-		width:300px;
-		border-radius:10px;
-		box-shadow:0 10px 25px rgba(0,0,0,.2);
+	.product-feature {
+		background: #ffffff;
+		border-radius: 12px;
+		padding: 2em;
+		text-align: center;
+		box-shadow: 0 8px 25px rgba(0,0,0,.08);
+		transition: all .3s ease;
+	}
+
+	.product-feature:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 15px 35px rgba(0,0,0,.15);
+	}
+
+	.product-feature .icon {
+		font-size: 2.6em;
+		color: #5b86e5;
+		margin-bottom: .6em;
+	}
+
+	.product-feature h3 {
+		margin-bottom: .6em;
+	}
+
+	.product-feature p {
+		margin: 0;
+		font-size: 0.95em;
+	}
+
+	@media screen and (max-width: 980px) {
+
+		.feature-grid {
+			grid-template-columns: 1fr;
+		}
+
+	}
+
+	/* 
+   BitWash Gallery
+	 */
+
+	.bitwash-gallery {
+
+		margin-top:4em;
+
+	}
+
+	.gallery-large img{
+
+		width:100%;
+		border-radius:12px;
+		box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+	}
+
+	.gallery-small{
+
+		display:grid;
+		grid-template-columns:1fr 1fr;
+		gap:1.5em;
+		margin-top:1.5em;
+
+	}
+
+	.gallery-small img{
+
+		width:100%;
+		border-radius:12px;
+		box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+	}
+
+	.gallery-large img,
+	.gallery-small img{
+
 		transition:.3s;
+
 	}
 
-	.gallery img:hover{
-		transform:translateY(-6px);
+	.gallery-large img:hover,
+	.gallery-small img:hover{
+
+		transform:scale(1.02);
+
 	}
 
-	#products ul{
-		margin-top:20px;
-		margin-left:20px;
+
+	/* 
+   Perfect For
+	 */
+
+	.market-grid{
+
+		display:grid;
+		grid-template-columns:repeat(5,1fr);
+		gap:1.5em;
+		margin-top:2em;
+
 	}
 
-	#products li{
-		margin-bottom:10px;
+	.market-card{
+
+		background:#f8f8f8;
+		border-radius:10px;
+		padding:2em 1em;
+		text-align:center;
+		transition:.3s;
+
+	}
+
+	.market-card:hover{
+
+		background:#ffffff;
+		transform:translateY(-5px);
+		box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+	}
+
+	.market-card .icon{
+
+		font-size:2.5em;
+		color:#5b86e5;
+		margin-bottom:.6em;
+
+	}
+
+	.market-card h3{
+
+		margin:0;
+
 	}
 
 	@media screen and (max-width:980px){
 
-		.gallery img{
-			width:100%;
-			max-width:420px;
+		.market-grid{
+
+			grid-template-columns:1fr;
+
 		}
 
 	}
